@@ -204,7 +204,14 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		if(root!=null) {
 			postHelper.push(root);
 			while(!postHelper.isEmpty()) {
-				//how should post and postHelper be updated?
+				BSTNode temp = postHelper.pop();
+				post.push(temp);
+				if (temp.leftChild != null) {
+					postHelper.push(temp.leftChild);
+				}
+				if (temp.rightChild != null) {
+					postHelper.push(temp.rightChild);
+				}
 			}
 			
 			while(!post.isEmpty()) {
