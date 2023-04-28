@@ -149,11 +149,11 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	}
 	
 	public void inOrderRecurse(BSTNode<T> node) {
-		if (node.rightChild != null) {
+		if (node.leftChild != null) {
 			inOrderRecurse(node.leftChild);
 		}
 		System.out.print(node.toString() + " ");
-		if (node.leftChild != null) {
+		if (node.rightChild != null) {
 			inOrderRecurse(node.rightChild);
 		}
 		
